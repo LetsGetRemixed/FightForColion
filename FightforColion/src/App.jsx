@@ -22,17 +22,55 @@ function App() {
     level: 1,
     spells: ["Strike"],
     fighters: ["Hero"],
+    companions: [],
+    equippedSpells: [],
   });
 
-  // MVP: pass state/setters as props
   return (
-    <div style={{ maxWidth: 400, margin: "0 auto", padding: 12 }}>
-      <nav style={{ marginBottom: 16 }}>
-        <button onClick={() => setScreen(SCREENS.COMBAT)}>Fight</button>
-        <button onClick={() => setScreen(SCREENS.SHOP)}>Shop</button>
-        <button onClick={() => setScreen(SCREENS.ROSTER)}>Fighters</button>
-        <button onClick={() => setScreen(SCREENS.LEVEL)}>Levels</button>
+    <div className="max-w-3xl mx-auto p-4 bg-gray-900 min-h-screen text-white">
+      <nav className="flex justify-around mb-6 space-x-2">
+        <button
+          onClick={() => setScreen(SCREENS.COMBAT)}
+          className={`px-4 py-2 rounded ${
+            screen === SCREENS.COMBAT
+              ? "bg-yellow-500 text-black"
+              : "bg-gray-700 hover:bg-gray-600"
+          }`}
+        >
+          Fight
+        </button>
+        <button
+          onClick={() => setScreen(SCREENS.SHOP)}
+          className={`px-4 py-2 rounded ${
+            screen === SCREENS.SHOP
+              ? "bg-yellow-500 text-black"
+              : "bg-gray-700 hover:bg-gray-600"
+          }`}
+        >
+          Shop
+        </button>
+        <button
+          onClick={() => setScreen(SCREENS.ROSTER)}
+          className={`px-4 py-2 rounded ${
+            screen === SCREENS.ROSTER
+              ? "bg-yellow-500 text-black"
+              : "bg-gray-700 hover:bg-gray-600"
+          }`}
+        >
+          Fighters
+        </button>
+        <button
+          onClick={() => setScreen(SCREENS.LEVEL)}
+          className={`px-4 py-2 rounded ${
+            screen === SCREENS.LEVEL
+              ? "bg-yellow-500 text-black"
+              : "bg-gray-700 hover:bg-gray-600"
+          }`}
+        >
+          Levels
+        </button>
       </nav>
+
       {screen === SCREENS.COMBAT && (
         <CombatScreen
           player={player}
@@ -55,3 +93,4 @@ function App() {
 }
 
 export default App;
+

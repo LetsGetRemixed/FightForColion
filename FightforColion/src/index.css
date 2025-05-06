@@ -1,24 +1,23 @@
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background: #181818;
-  color: #f3f3f3;
-}
-button {
-  background: #333;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  margin: 4px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-button:disabled {
-  background: #555;
-  color: #aaa;
-  cursor: not-allowed;
-}
-nav {
-  display: flex;
-  justify-content: space-between;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Satoshi", "sans-serif";
+  --font-mainfont: "Square Market", sans-serif;
+  --font-cinzel: "Cinzel", serif;
+  --breakpoint-3xl: 1920px;
+  
+  --color-darkBackground: #333333;
+  --color-mainBackground: #F5F1E6;
+  --color-mainWhite: #F8F8F8;
+  --color-headerText: #fcd744;
+  --color-darkCreme: #e0cf9f;
+  --color-secondText: #4A4A4A;
+  --color-accentBackground: #dea08a;
+
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+
+  --color-primary: oklch(0.99 0 0);
 }
